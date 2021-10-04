@@ -2,7 +2,7 @@ return {
 		{'i', 'jk', '<Esc>' },
 		{'n', '<leader>fs', '<Cmd>w!<CR>' },
 		-- {'n', '<leader>fq', '<Cmd>bd %<CR> <Cmd>q!<CR>' },
-		{'n', '<leader>fq', '<Cmd>qall!<CR>' },
+
 		{'n', '<leader>w\\', '<Cmd>vsp<CR><C-w><c-l>' },
 		{'n', '<leader>w-', '<Cmd>sp<CR><C-w><c-k>' },
 		{'n', '<leader>ww', '<C-w>w' },
@@ -20,6 +20,7 @@ return {
 		{'n', '<leader>fr', '<Cmd>Telescope oldfiles<CR>' },
 
 		{'n', '<leader>fd', '<Cmd>edit /home/daoist/.config/nvim/init.lua<CR>' },
+        {'n', '<leader>fq', '<Cmd>qall!<CR>' },
 		{'n', '<leader><leader>w', '<Cmd>HopWord<CR>' },
 
 		-- {'n', '<leader>nr', '<Cmd>NvimTreeRefresh<CR>' },
@@ -28,4 +29,9 @@ return {
 
         {'n', '<leader>ci', '<Plug>kommentary_motion_increase' },
         {'n', '<leader>cd', '<Plug>kommentary_motion_decrease' },
+
+        {'n', '<leader>pi', '<Cmd>PackerInstall<CR>' },
+        {'n', '<leader>pc', '<Cmd>PackerCompile<CR>' },
+        {'n', '<leader>ps', '<Cmd>PackerStatus<CR>' },
+        {'n', '<leader>pc', '<Cmd>PackerClean<CR>' },
 	}

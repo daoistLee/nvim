@@ -38,7 +38,7 @@ return function()
             ["<leader>fl"] = { "<cmd>Telescope live_grep<cr>", "Find Words" },
 
             ["<leader>fs"] = { "<cmd>w!<cr>", "Save File" },
-            ["<leader>fq"] = { "<cmd>qall<cr>", "Exit" },
+            ["<leader>fq"] = { "<cmd>qall!<cr>", "Exit" },
             ["<leader>fn"] = { "<cmd>enew<cr>", "New File" },
             ["<leader>fd"] = { "<cmd>enew<cr>", "Edit init.lua" },
 
@@ -58,5 +58,11 @@ return function()
             ["<leader>c"] = { name = "+kommentary" },
             ["<leader>ci"] = { "<Plug>kommentary_motion_increase", "motion_increase" },
             ["<leader>cd"] = { "<Plug>kommentary_motion_decrease", "motion_decrease" },
+
+            ["<leader>p"] = { name = "+Packer" },
+            ["<leader>pi"] = { "<Cmd>PackerInstall<CR>", "PackerInstall" },
+            ["<leader>pc"] = { "<Cmd>PackerCompile<CR>", "PackerCompile" },
+            ["<leader>ps"] = { "<Cmd>PackerStatus<CR>", "PackerStatus" },
+            ["<leader>pC"] = { "<Cmd>PackerClean<CR>", "PackerClean" },
         }
     end

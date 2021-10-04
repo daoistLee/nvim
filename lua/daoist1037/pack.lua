@@ -113,10 +113,6 @@ return packer.startup(function()
     }
 
     use {'yamatsum/nvim-cursorline'}
-    -- use {
-    --     'lukas-reineke/indent-blankline.nvim',
-    --     config = require('daoist1037.plugins_config.indent-blankline')
-    -- }
     use {
         'b3nj5m1n/kommentary',
         config = require('daoist1037.plugins_config.kommentary')
@@ -126,5 +122,25 @@ return packer.startup(function()
         'glepnir/indent-guides.nvim',
         config = require('daoist1037.plugins_config.indent-guides')
     }
+
+    -- use {
+    --     'hrsh7th/nvim-cmp',
+    --     config = require('daoist1037.plugins_config.nvim-cmp')
+    -- }
+    -- use {
+    --     'folke/lua-dev.nvim',
+    -- }
+    -- use {
+    --     'neovim/nvim-lspconfig',
+    --     config = require('daoist1037.plugins_config.nvim-lspconfig')
+    -- }
+
+    -- use {
+    --     'kabouzeid/nvim-lspinstall',
+    --     config = require('daoist1037.plugins_config.nvim-lspinstall')
+    -- }
+    -- use {
+    --     'alexaandru/nvim-lspupdate',
+    -- }
 
 end)
