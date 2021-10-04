@@ -54,6 +54,7 @@ return function()
 
             ["<leader>n"] = { name = "+nvimtree" },
             ["<leader>nt"] = { "<Cmd>NvimTreeToggle<CR>", "NvimTree Toggle" },
+            ["<leader>no"] = { "<Cmd>NvimTreeFocus<CR>", "NvimTree Focus" },
 
             ["<leader>c"] = { name = "+kommentary" },
             ["<leader>ci"] = { "<Plug>kommentary_motion_increase", "motion_increase" },

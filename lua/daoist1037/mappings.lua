@@ -20,18 +20,19 @@ return {
 		{'n', '<leader>fr', '<Cmd>Telescope oldfiles<CR>' },
 
 		{'n', '<leader>fd', '<Cmd>edit /home/daoist/.config/nvim/init.lua<CR>' },
-        {'n', '<leader>fq', '<Cmd>qall!<CR>' },
+    {'n', '<leader>fq', '<Cmd>qall!<CR>' },
 		{'n', '<leader><leader>w', '<Cmd>HopWord<CR>' },
 
 		-- {'n', '<leader>nr', '<Cmd>NvimTreeRefresh<CR>' },
 		{'n', '<leader>nt', '<Cmd>NvimTreeToggle<CR>' },
+		{'n', '<leader>no', '<Cmd>NvimTreeFocus<CR>' },
 		-- {'n', '<leader>nf', '<Cmd>NvimTreeFindFile<CR>' },
 
-        {'n', '<leader>ci', '<Plug>kommentary_motion_increase' },
-        {'n', '<leader>cd', '<Plug>kommentary_motion_decrease' },
+    {'n', '<leader>ci', '<Plug>kommentary_motion_increase' },
+    {'n', '<leader>cd', '<Plug>kommentary_motion_decrease' },
 
-        {'n', '<leader>pi', '<Cmd>PackerInstall<CR>' },
-        {'n', '<leader>pc', '<Cmd>PackerCompile<CR>' },
-        {'n', '<leader>ps', '<Cmd>PackerStatus<CR>' },
-        {'n', '<leader>pc', '<Cmd>PackerClean<CR>' },
+    {'n', '<leader>pi', '<Cmd>PackerInstall<CR>' },
+    {'n', '<leader>pc', '<Cmd>PackerCompile<CR>' },
+    {'n', '<leader>ps', '<Cmd>PackerStatus<CR>' },
+    {'n', '<leader>pc', '<Cmd>PackerClean<CR>' },
 	}
