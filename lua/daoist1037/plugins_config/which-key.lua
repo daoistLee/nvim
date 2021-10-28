@@ -17,7 +17,7 @@ return function()
                     group = "+", -- symbol prepended to a group
                 },
                 window = {
-                    border = "single", -- none, single, double, shadow
+                    border = "double", -- none, single, double, shadow
                     position = "bottom", -- bottom, top
                     margin = { 0, 0, 0, 0 }, -- extra window margin [top, right, bottom, left]
                     padding = { 1, 1, 1, 1 }, -- extra window padding [top, right, bottom, left]
@@ -32,10 +32,13 @@ return function()
         )
         wk.register {
             ["<leader>f"] = { name = "+file" },
-            ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find File" },
+            ["<leader>fF"] = { "<cmd>Telescope find_files<cr>", "Find File" },
+            ["<leader>ff"] = { "<cmd>Telescope file_browser<cr>", "File browser" },
+            ["<leader>fl"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "fuzzy search" },
             ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
             ["<leader>fb"] = { "<cmd>Telescope buffers<cr>", "Find buffers" },
-            ["<leader>fl"] = { "<cmd>Telescope live_grep<cr>", "Find Words" },
+            ["<leader>fg"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
+            ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "help tags" },
 
             ["<leader>fs"] = { "<cmd>w!<cr>", "Save File" },
             ["<leader>fq"] = { "<cmd>qall!<cr>", "Exit" },
@@ -43,7 +46,8 @@ return function()
             ["<leader>fd"] = { "<cmd>enew<cr>", "Edit init.lua" },
 
             ["<leader>w"] = { name = "+window" },
-            ["<leader>wc"] = { "<C-w>c", "window conceal" },
+            -- ["<leader>wc"] = { "<C-w>c", "window conceal" },
+            ["<leader>wc"] = { "<Cmd>quit!<CR>", "window conceal" },
             ["<leader>ww"] = { "<C-w>w", "window next" },
             ["<leader>wh"] = { "<C-w>h", "window left" },
             ["<leader>wj"] = { "<C-w>j", "window down" },
@@ -55,15 +59,31 @@ return function()
             ["<leader>n"] = { name = "+nvimtree" },
             ["<leader>nt"] = { "<Cmd>NvimTreeToggle<CR>", "NvimTree Toggle" },
             ["<leader>no"] = { "<Cmd>NvimTreeFocus<CR>", "NvimTree Focus" },
+            ["<leader>nf"] = { "<Cmd>NvimTreeFindFile<CR>", "NvimTree FindFile" },
 
-            ["<leader>c"] = { name = "+kommentary" },
-            ["<leader>ci"] = { "<Plug>kommentary_motion_increase", "motion_increase" },
-            ["<leader>cd"] = { "<Plug>kommentary_motion_decrease", "motion_decrease" },
 
             ["<leader>p"] = { name = "+Packer" },
+
             ["<leader>pi"] = { "<Cmd>PackerInstall<CR>", "PackerInstall" },
             ["<leader>pc"] = { "<Cmd>PackerCompile<CR>", "PackerCompile" },
             ["<leader>ps"] = { "<Cmd>PackerStatus<CR>", "PackerStatus" },
             ["<leader>pC"] = { "<Cmd>PackerClean<CR>", "PackerClean" },
+
+            ["<leader><leader>"] = { name = "+hop" },
+            ["<leader><Leader>w"] = { "<cmd>lua require'hop'.hint_words()<cr>", "HopWord" },
+            ["<leader><Leader>p"] = { "<cmd>lua require'hop'.hint_patterns()<cr>", "HopPattern" },
+            -- ["<leader>l"] = { name = "+Lsp" },
+            -- ["<leader>lD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "declaration" },
+            -- ["<leader>ld"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "definition" },
+            -- ["<leader>lk"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "hover" },
+            -- ["<leader>ls"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "signature_help" },
+            -- ["<leader>lR"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "rename" },
+            -- ["<leader>lr"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "references" },
+            -- ["<leader>le"] = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "show_line_diagnostics" },
+            -- ["<leader>l["] = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", "goto_prev" },
+            -- ["<leader>l]"] = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "goto_next" },
+            -- ["<leader>lq"] = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "set_loclist" },
+            -- ["<leader>lf"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "formatting" },
+
         }
     end

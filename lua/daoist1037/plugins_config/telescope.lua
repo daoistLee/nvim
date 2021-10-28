@@ -8,6 +8,10 @@ return function()
                 hidden = true,
                 no_ignore = true,
             },
+            file_browser = {
+                hidden = true,
+                no_ignore = true,
+            },
         }
     }
 end

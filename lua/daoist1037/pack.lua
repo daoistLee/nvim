@@ -66,15 +66,22 @@ return packer.startup(function()
 
     use {'nvim-treesitter/nvim-treesitter',}
 
-    use {   'tpope/vim-surround',}
+    -- use {   'tpope/vim-surround',}
 
     use {'norcalli/nvim-colorizer.lua',}
-    use { 'drewtempelmeyer/palenight.vim', }
+    -- use { 'drewtempelmeyer/palenight.vim', }
     use {
         'navarasu/onedark.nvim',
         config = function()
-            vim.g.onedark_style = 'cool'
+            -- vim.g.onedark_style = 'cool'
+          --vim.g.onedark_style = 'darker'
         end
+    }
+    use {
+        'mhartington/oceanic-next',
+    }
+    use {
+        'glepnir/zephyr-nvim'
     }
 
     use {
@@ -98,7 +105,7 @@ return packer.startup(function()
         as = 'hop',
         config = function()
             require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-            -- vim.api.nvim_set_keymap('n', '$', "<cmd>lua require'hop'.hint_words()<cr>", {})
+            -- vim.api.nvim_set_keymap('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words()<cr>", {})
         end
     }
 
@@ -113,34 +120,55 @@ return packer.startup(function()
     }
 
     use {'yamatsum/nvim-cursorline'}
-    use {
-        'b3nj5m1n/kommentary',
-        config = require('daoist1037.plugins_config.kommentary')
-    }
 
     use {
         'glepnir/indent-guides.nvim',
         config = require('daoist1037.plugins_config.indent-guides')
     }
 
-    -- use {
-    --     'hrsh7th/nvim-cmp',
-    --     config = require('daoist1037.plugins_config.nvim-cmp')
-    -- }
-    -- use {
-    --     'folke/lua-dev.nvim',
-    -- }
-    -- use {
-    --     'neovim/nvim-lspconfig',
-    --     config = require('daoist1037.plugins_config.nvim-lspconfig')
-    -- }
+    use {
+        'p00f/nvim-ts-rainbow',
+        config = require('daoist1037.plugins_config.nvim-ts-rainbow')
+    }
 
-    -- use {
-    --     'kabouzeid/nvim-lspinstall',
-    --     config = require('daoist1037.plugins_config.nvim-lspinstall')
-    -- }
-    -- use {
-    --     'alexaandru/nvim-lspupdate',
-    -- }
+    use {
+        'machakann/vim-highlightedyank'
+    }
+
+    use {
+        'neovim/nvim-lspconfig',
+        config = require('daoist1037.plugins_config.nvim-lspconfig')
+    }
+
+    use {
+        'tami5/lspsaga.nvim',
+        config = require('daoist1037.plugins_config.lspsaga')
+    }
+
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/cmp-nvim-lsp",
+            "onsails/lspkind-nvim",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-path",
+            "octaltree/cmp-look",
+            "f3fora/cmp-spell",
+        },
+        config = require('daoist1037.plugins_config.nvim-cmp')
+    }
+    use {
+        "ray-x/lsp_signature.nvim",
+    }
+
+    use {
+        'windwp/nvim-autopairs',
+        config = require('daoist1037.plugins_config.nvim-autopairs')
+    }
+    use {
+        'b3nj5m1n/kommentary',
+        config = require('daoist1037.plugins_config.kommentary')
+    }
 
 end)
