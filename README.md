@@ -43,7 +43,11 @@ ttimeout = true,
 timeoutlen = 500,
 ttimeoutlen = 0,
 termguicolors=true,
-gcr = "n-v-c:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,r:hor50-Cursor/lCursor",
+gcr = [[n-v-c:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,]]..
+      [[ve:ver35-Cursor,]]..
+      [[o:hor50-Cursor,]]..
+      [[i-ci:ver25-Cursor/lCursor,]]..
+      [[r:hor50-Cursor/lCursor]],
 completeopt = 'menuone,noinsert',
 ```
 
