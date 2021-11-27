@@ -2,10 +2,10 @@
 neovim config in lua
 
 # TOC 
-- [Options](## Options)
-- [Disable](## Disable)
-- [Plugins](## Plugins)
-- [Mappings](## Mappings)
+- [Options](#Options)
+- [Disable](#Disable)
+- [Plugins](#Plugins)
+- [Mappings](#Mappings)
 
 ## Options
 ```lua
