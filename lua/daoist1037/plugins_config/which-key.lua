@@ -41,12 +41,12 @@ return function()
             ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "help tags" },
 
             ["<leader>fs"] = { "<cmd>w!<cr>", "Save File" },
-            ["<leader>fq"] = { "<cmd>qall!<cr>", "Exit" },
             ["<leader>fn"] = { "<cmd>enew<cr>", "New File" },
-            ["<leader>fd"] = { "<cmd>enew<cr>", "Edit init.lua" },
+            ["<leader>fd"] = { "<cmd>edit ~/.config/nvim/lua/daoist1037/init.lua<cr>", "Edit init.lua" },
 
             ["<leader>w"] = { name = "+window" },
             -- ["<leader>wc"] = { "<C-w>c", "window conceal" },
+            ["<leader>wq"] = { "<Cmd>qall!<CR>", "window Exit" },
             ["<leader>wc"] = { "<Cmd>quit!<CR>", "window conceal" },
             ["<leader>ww"] = { "<C-w>w", "window next" },
             ["<leader>wh"] = { "<C-w>h", "window left" },
@@ -55,6 +55,7 @@ return function()
             ["<leader>wl"] = { "<C-w>l", "window right" },
             ["<leader>w-"] = { "<Cmd>sp<CR><C-w>j", "split" },
             ["<leader>w\\"] = { "<Cmd>vsp<CR><C-w>l", "vsplit" },
+            -- ["<leader>wn"] = { "<Cmd>lua require('nvim-window').pick()<CR>", "nvim-window" },
 
             ["<leader>n"] = { name = "+nvimtree" },
             ["<leader>nt"] = { "<Cmd>NvimTreeToggle<CR>", "NvimTree Toggle" },

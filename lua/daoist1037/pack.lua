@@ -64,7 +64,10 @@ return packer.startup(function()
         config = require('daoist1037.plugins_config.telescope')
     }
 
-    use {'nvim-treesitter/nvim-treesitter',}
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        -- config = require('daoist1037.plugins_config.nvim-treesitter')
+    }
 
     -- use {   'tpope/vim-surround',}
 
@@ -170,5 +173,37 @@ return packer.startup(function()
         'b3nj5m1n/kommentary',
         config = require('daoist1037.plugins_config.kommentary')
     }
+
+    use {
+        'williamboman/nvim-lsp-installer',
+    }
+    use {
+        "folke/zen-mode.nvim",
+        --[[ config = function()
+            require("zen-mode").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end ]]
+    }
+--    use {
+--        'nvim-orgmode/orgmode',
+--        config = require('daoist1037.plugins_config.orgmode')
+--    }
+
+    --[[ use {
+        'ellisonleao/glow.nvim'
+    } ]]
+
+
+
+    --[[ use {
+        'symbols-outline.nvim'
+    } ]]
+
+    --[[ use {
+        'ray-x/navigator.lua'
+    } ]]
 
 end)

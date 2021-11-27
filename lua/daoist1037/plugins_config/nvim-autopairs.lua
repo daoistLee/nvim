@@ -1,6 +1,6 @@
 return function()
     require('nvim-autopairs').setup{
-        disable_filetype = { "TelescopePrompt" , "vim" },
+        disable_filetype = { "TelescopePrompt" , "vim", "guihua", "guihua_rust", "clap_input"  },
 
     }
     -- require('nvim-autopairs').setup {fast_wrap = {}}

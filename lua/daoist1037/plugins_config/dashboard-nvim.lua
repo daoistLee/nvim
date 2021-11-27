@@ -34,5 +34,5 @@ return function()
 -- [[    ╚▓          ╚▓█     ]]
 
     }
-    vim.g.dashboard_custom_footer = {'Welcome daoist'}
+    -- vim.g.dashboard_custom_footer = {'Welcome daoist'}
 end

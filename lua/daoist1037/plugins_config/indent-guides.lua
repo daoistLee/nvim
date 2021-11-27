@@ -8,7 +8,7 @@ return function()
         indent_space_guides = true,
         indent_tab_guides = false,
         indent_soft_pattern = '\\s',
-        exclude_filetypes = {'help','dashboard','dashpreview','NvimTree','vista','sagahover','terminal','TelescopePrompt'},
+        exclude_filetypes = {'help','dashboard','dashpreview','vista','sagahover','terminal','TelescopePrompt'},
         buftype_exclude = {"terminal", "nofile"},
         even_colors = { fg ='#2a3834',bg='#332b36' },
         odd_colors = {fg='#332b36',bg='#2a3834'},

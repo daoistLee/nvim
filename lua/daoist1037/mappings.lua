@@ -46,6 +46,7 @@ return {
 --  {'t', '<A-d>', "<C-\\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>" },
 --  {'n', '<leader>ld', "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>" },
 --  {'n', '<leader>lc', "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>" },
+ {'n', '<C-p>', "<cmd>lua require('fine-cmdline').open()<CR>" },
 
 
 

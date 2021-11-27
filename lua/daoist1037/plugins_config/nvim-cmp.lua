@@ -1,6 +1,4 @@
 return function()
-
-
     local cmp = require'cmp'
     local lspkind = require('lspkind')
     cmp.setup({
@@ -18,16 +16,16 @@ return function()
             border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
         },
         snippet = {
-        expand = function(args)
-            -- For `vsnip` user.
-            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
+            expand = function(args)
+                -- For `vsnip` user.
+                -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
 
-            -- For `luasnip` user.
-            -- require('luasnip').lsp_expand(args.body)
+                -- For `luasnip` user.
+                -- require('luasnip').lsp_expand(args.body)
 
-            -- For `ultisnips` user.
-            -- vim.fn["UltiSnips#Anon"](args.body)
-        end,
+                -- For `ultisnips` user.
+                -- vim.fn["UltiSnips#Anon"](args.body)
+            end,
         },
         mapping = {
             ['<Tab>'] = cmp.mapping.select_next_item(),
@@ -59,24 +57,42 @@ return function()
             --     end,
         },
         sources = {
-        { name = 'nvim_lsp' },
-        { name = 'treesitter' },
+            { name = 'orgmode' },
+            { name = 'nvim_lsp' },
+            { name = 'treesitter' },
 
-        -- For vsnip user.
-        --   { name = 'vsnip' },
+            -- For vsnip user.
+            --   { name = 'vsnip' },
 
-        -- For luasnip user.
-        -- { name = 'luasnip' },
+            -- For luasnip user.
+            -- { name = 'luasnip' },
 
-        -- For ultisnips user.
-        -- { name = 'ultisnips' },
+            -- For ultisnips user.
+            -- { name = 'ultisnips' },
 
-        { name = 'buffer' },
-        { name = 'path' },
+            { name = 'buffer' },
+            { name = 'path' },
         }
     })
     -- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
     -- cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done())
+    --
+    -- Use buffer source for `/`. 
+    cmp.setup.cmdline('/', { 
+        sources = { 
+            { name = 'buffer' } 
+        } 
+    }) 
+    -- Use cmdline & path source for ':'. 
+    cmp.setup.cmdline(':', { 
+        sources = cmp.config.sources({ 
+            { name = 'path' } 
+        }, { 
+            { name = 'cmdline' } 
+        }) 
+    })
+
+
 
 
 end
