@@ -40,13 +40,10 @@ return {
  {'n', 'gr', "<cmd>lua require('lspsaga.rename').rename()<CR>" },
  {'n', 'gd', "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>" },
  {'n', 'gh', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>" },
- {'n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>" },
- {'n', '<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>" },
 --  {'n', '<A-d>', "<cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>" },
 --  {'t', '<A-d>', "<C-\\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>" },
 --  {'n', '<leader>ld', "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>" },
 --  {'n', '<leader>lc', "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>" },
- {'n', '<C-p>', "<cmd>lua require('fine-cmdline').open()<CR>" },
 
 
 

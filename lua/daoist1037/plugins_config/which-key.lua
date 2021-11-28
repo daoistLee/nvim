@@ -60,7 +60,7 @@ return function()
             ["<leader>n"] = { name = "+nvimtree" },
             ["<leader>nt"] = { "<Cmd>NvimTreeToggle<CR>", "NvimTree Toggle" },
             ["<leader>no"] = { "<Cmd>NvimTreeFocus<CR>", "NvimTree Focus" },
-            ["<leader>nf"] = { "<Cmd>NvimTreeFindFile<CR>", "NvimTree FindFile" },
+            -- ["<leader>nf"] = { "<Cmd>NvimTreeFindFile<CR>", "NvimTree FindFile" },
 
 
             ["<leader>p"] = { name = "+Packer" },

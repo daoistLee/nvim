@@ -42,56 +42,33 @@ packer.init {
 
 local use = packer.use
 return packer.startup(function()
+    -------------------------------------
+    ------------ Packer -----------------
+    -------------------------------------
     use {
         "wbthomason/packer.nvim",
         event = "VimEnter",
     }
+
+
+    -------------------------------------
+    -------------- UI -------------------
+    -------------------------------------
     use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = require('daoist1037.plugins_config.nvim-tree')
+        'norcalli/nvim-colorizer.lua',
+        ft = { 'css', 'javascript', 'vim', 'html' },
+        config = [[require('colorizer').setup {'css', 'javascript', 'vim', 'html'}]],
+        -- event = 'BufRead',
     }
-
-    use {
-        "dstein64/vim-startuptime",
-        cmd = "StartupTime",
-    }
-
-    use {"nvim-lua/plenary.nvim",}
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} },
-        config = require('daoist1037.plugins_config.telescope')
-    }
-
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        -- config = require('daoist1037.plugins_config.nvim-treesitter')
-    }
-
-    -- use {   'tpope/vim-surround',}
-
-    use {'norcalli/nvim-colorizer.lua',}
-    -- use { 'drewtempelmeyer/palenight.vim', }
     use {
         'navarasu/onedark.nvim',
         config = function()
-            -- vim.g.onedark_style = 'cool'
-          --vim.g.onedark_style = 'darker'
-        end
+            vim.g.onedark_style = 'dark'
+            vim.g.onedark_toggle_style_keymap = '<nop>'
+            -- vim.g.onedark_transparent_background = true
+            require('onedark').setup()
+        end,
     }
-    use {
-        'mhartington/oceanic-next',
-    }
-    use {
-        'glepnir/zephyr-nvim'
-    }
-
-    use {
-        "folke/which-key.nvim",
-        config = require('daoist1037.plugins_config.which-key')
-    }
-
     use { 'kyazdani42/nvim-web-devicons' ,}
     use {
         'glepnir/dashboard-nvim',
@@ -100,110 +77,132 @@ return packer.startup(function()
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
-        config = require('daoist1037.plugins_config.lualine')
+        -- opt = true,
+        -- after = 'nvim-web-devicons',
+        config = require('daoist1037.plugins_config.lualine'),
     }
-
-    use {
-        'phaazon/hop.nvim',
-        as = 'hop',
-        config = function()
-            require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-            -- vim.api.nvim_set_keymap('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words()<cr>", {})
-        end
-    }
-
     use {
         'akinsho/bufferline.nvim',
-        config = require('daoist1037.plugins_config.bufferline')
+        -- opt = true,
+        -- after = 'nvim-web-devicons',
+        config = require('daoist1037.plugins_config.bufferline'),
+        event = 'BufRead',
+        -- event = 'User ActuallyEditing',
     }
-
-    use {
-        "akinsho/toggleterm.nvim",
-        config = require('daoist1037.plugins_config.toggleterm')
-    }
-
     use {'yamatsum/nvim-cursorline'}
-
-    use {
-        'glepnir/indent-guides.nvim',
-        config = require('daoist1037.plugins_config.indent-guides')
-    }
-
-    use {
+    --[[ use {
         'p00f/nvim-ts-rainbow',
-        config = require('daoist1037.plugins_config.nvim-ts-rainbow')
-    }
+        config = require('daoist1037.plugins_config.nvim-ts-rainbow'),
+        -- event = 'BufRead',
+    } ]]
 
-    use {
-        'machakann/vim-highlightedyank'
-    }
 
+    -------------------------------------
+    -------------- LSP ------------------
+    -------------------------------------
     use {
         'neovim/nvim-lspconfig',
-        config = require('daoist1037.plugins_config.nvim-lspconfig')
-    }
-
-    use {
+        -- opt = true,
+        config = require('daoist1037.plugins_config.nvim-lspconfig'),
+    } 
+    --[[ use {
         'tami5/lspsaga.nvim',
-        config = require('daoist1037.plugins_config.lspsaga')
-    }
-
+        config = require('daoist1037.plugins_config.lspsaga'),
+    } ]]
     use {
         "hrsh7th/nvim-cmp",
         requires = {
-            "hrsh7th/cmp-nvim-lsp",
+            {'L3MON4D3/LuaSnip'},
+            {"hrsh7th/cmp-nvim-lsp", after = 'nvim-cmp'},
             "onsails/lspkind-nvim",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-nvim-lua",
-            "hrsh7th/cmp-path",
-            "octaltree/cmp-look",
-            "f3fora/cmp-spell",
+            {"hrsh7th/cmp-buffer", after = 'nvim-cmp'},
+            {"hrsh7th/cmp-nvim-lua", after = 'nvim-cmp'},
+            {"hrsh7th/cmp-path", after = 'nvim-cmp'},
+            {"octaltree/cmp-look", after = 'nvim-cmp'},
+            {"f3fora/cmp-spell", after = 'nvim-cmp'},
+            { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
         },
-        config = require('daoist1037.plugins_config.nvim-cmp')
+        config = require('daoist1037.plugins_config.nvim-cmp'),
+        event = 'InsertEnter *',
+    }  
+    use {
+        'williamboman/nvim-lsp-installer',
+        opt = true,
+        after = 'nvim-lspconfig',
     }
     use {
         "ray-x/lsp_signature.nvim",
     }
 
+
+    -------------------------------------
+    ------------- Tools -----------------
+    -------------------------------------
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = require('daoist1037.plugins_config.nvim-tree'),
+        opt = true,
+        cmd = {'NvimTreeToggle',  'NvimFocus'},
+    }
+    use {"nvim-lua/plenary.nvim",}
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} },
+        config = require('daoist1037.plugins_config.telescope'),
+        cmd = 'Telescope',
+    }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        -- config = require('daoist1037.plugins_config.nvim-treesitter'),
+        -- event = 'BufRead',
+    }
+
+    use {
+        "dstein64/vim-startuptime",
+        cmd = "StartupTime",
+    }
+
+
+    -------------------------------------
+    --------------- Keys ----------------
+    -------------------------------------
+    use {
+        "folke/which-key.nvim",
+        config = require('daoist1037.plugins_config.which-key'),
+        opt = true,
+        event = 'VimEnter',
+    }
+    use {
+        'phaazon/hop.nvim',
+        -- as = 'hop',
+        config = function()
+            require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+            -- vim.api.nvim_set_keymap('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words()<cr>", {})
+        end,
+    }
+
+    -------------------------------------
+    --------------- Edit ----------------
+    -------------------------------------
+    use {
+        'machakann/vim-highlightedyank'
+    }
     use {
         'windwp/nvim-autopairs',
-        config = require('daoist1037.plugins_config.nvim-autopairs')
+        config = require('daoist1037.plugins_config.nvim-autopairs'),
+        event = 'InsertEnter *',
     }
     use {
         'b3nj5m1n/kommentary',
         config = require('daoist1037.plugins_config.kommentary')
-    }
-
-    use {
-        'williamboman/nvim-lsp-installer',
-    }
-    use {
-        "folke/zen-mode.nvim",
-        --[[ config = function()
-            require("zen-mode").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end ]]
-    }
---    use {
---        'nvim-orgmode/orgmode',
---        config = require('daoist1037.plugins_config.orgmode')
---    }
-
-    --[[ use {
-        'ellisonleao/glow.nvim'
-    } ]]
-
+    }  
+    -- use {   'tpope/vim-surround',}
 
 
     --[[ use {
-        'symbols-outline.nvim'
-    } ]]
-
-    --[[ use {
-        'ray-x/navigator.lua'
+        'glepnir/indent-guides.nvim',
+        config = require('daoist1037.plugins_config.indent-guides')
     } ]]
 
 end)

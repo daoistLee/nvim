@@ -78,25 +78,33 @@ completeopt = 'menuone,noinsert',
 ## Plugins
 
 ```
-./lua/daoist1037/plugins_config
-├── bufferline.lua
-├── dashboard-nvim.lua
-├── indent-guides.lua
-├── kommentary.lua
-├── lspsaga.lua
-├── lualine.lua
-├── nvim-autopairs.lua
-├── nvim-cmp.lua
-├── nvim-lspconfig.lua
-├── nvim-tree.lua
-├── nvim-treesitter.lua
-├── nvim-ts-rainbow.lua
-├── nvim-window.lua
-├── orgmode.lua
-├── telescope.lua
-├── toggleterm.lua
-└── which-key.lua
-
+~/.config/nvim/..
+│  .git
+│  ✗ lua
+│ └  ✗ daoist1037
+│   │  ✗ plugins_config
+│   │ │  bufferline.lua
+│   │ │  dashboard-nvim.lua
+│   │ │  indent-guides.lua
+│   │ │  kommentary.lua
+│   │ │  lspsaga.lua
+│   │ │  lualine.lua
+│   │ │  nvim-autopairs.lua
+│   │ │  ✗ nvim-cmp.lua
+│   │ │  nvim-lspconfig.lua
+│   │ │  ✗ nvim-tree.lua
+│   │ │  nvim-treesitter.lua
+│   │ │  nvim-ts-rainbow.lua
+│   │ │  telescope.lua
+│   │ └  ✗ which-key.lua
+│   │  disable.lua
+│   │  ✗ init.lua
+│   │  ✗ mappings.lua
+│   │  options.lua
+│   └  ✗ pack.lua
+│  ✗ plugin
+│  init.lua
+└ ✗ README.md
 ```
 
 ## Mapping
@@ -109,10 +117,6 @@ completeopt = 'menuone,noinsert',
 {'n', 'gr', "<cmd>lua require('lspsaga.rename').rename()<CR>" },
 {'n', 'gd', "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>" },
 {'n', 'gh', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>" },
-{'n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>" },
-{'n', '<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>" },
-{'n', '<C-p>', "<cmd>lua require('fine-cmdline').open()<CR>" },
-    }
 ["<leader>f"] = { name = "+file" },
 ["<leader>fF"] = { "<cmd>Telescope find_files<cr>", "Find File" },
 ["<leader>ff"] = { "<cmd>Telescope file_browser<cr>", "File browser" },
@@ -127,7 +131,6 @@ completeopt = 'menuone,noinsert',
 ["<leader>fd"] = { "<cmd>edit ~/.config/nvim/lua/daoist1037/init.lua<cr>", "Edit init.lua" },
 
 ["<leader>w"] = { name = "+window" },
--- ["<leader>wc"] = { "<C-w>c", "window conceal" },
 ["<leader>wq"] = { "<Cmd>qall!<CR>", "window Exit" },
 ["<leader>wc"] = { "<Cmd>quit!<CR>", "window conceal" },
 ["<leader>ww"] = { "<C-w>w", "window next" },
@@ -137,12 +140,10 @@ completeopt = 'menuone,noinsert',
 ["<leader>wl"] = { "<C-w>l", "window right" },
 ["<leader>w-"] = { "<Cmd>sp<CR><C-w>j", "split" },
 ["<leader>w\\"] = { "<Cmd>vsp<CR><C-w>l", "vsplit" },
--- ["<leader>wn"] = { "<Cmd>lua require('nvim-window').pick()<CR>", "nvim-window" },
 
 ["<leader>n"] = { name = "+nvimtree" },
 ["<leader>nt"] = { "<Cmd>NvimTreeToggle<CR>", "NvimTree Toggle" },
 ["<leader>no"] = { "<Cmd>NvimTreeFocus<CR>", "NvimTree Focus" },
-["<leader>nf"] = { "<Cmd>NvimTreeFindFile<CR>", "NvimTree FindFile" },
 
 
 ["<leader>p"] = { name = "+Packer" },
