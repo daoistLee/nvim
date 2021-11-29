@@ -106,19 +106,14 @@ return packer.startup(function()
     use {
         'tami5/lspsaga.nvim',
         config = require('daoist1037.plugins_config.lspsaga'),
-        --[[ cmd = {
-            "lua require('lspsaga.hover').render_hover_doc()",
-            "lua require('lspsaga.signaturehelp').signature_help()",
-            "lua require('lspsaga.rename').rename()",
-            "lua require'lspsaga.provider'.preview_definition()",
-            "lua require'lspsaga.provider'.lsp_finder()",
-        } ]]
     }
     use {
         "hrsh7th/nvim-cmp",
         requires = {
             {'L3MON4D3/LuaSnip', after = 'nvim-cmp'},
             {"hrsh7th/cmp-nvim-lsp", after = 'nvim-cmp'},
+            { "hrsh7th/cmp-nvim-lsp-document-symbol", after = "nvim-cmp" },
+            { "hrsh7th/cmp-cmdline", after = "nvim-cmp" },
             {"onsails/lspkind-nvim"},
             {"hrsh7th/cmp-buffer", after = 'nvim-cmp'},
             {"hrsh7th/cmp-nvim-lua", after = 'nvim-cmp'},
@@ -137,7 +132,7 @@ return packer.startup(function()
     }
     use {
         "ray-x/lsp_signature.nvim",
-        opt = true,
+        -- opt = true,
         -- disable = true,
     }
 
@@ -145,6 +140,7 @@ return packer.startup(function()
     -------------------------------------
     ------------- Tools -----------------
     -------------------------------------
+    -- use { "nvim-lua/popup.nvim" }
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
@@ -163,10 +159,26 @@ return packer.startup(function()
         -- config = require('daoist1037.plugins_config.nvim-treesitter'),
         -- event = 'BufRead',
     }
-
+    use {
+        "nvim-treesitter/playground",
+        requires = "nvim-treesitter",
+    }
+    use {
+        "nvim-treesitter/completion-treesitter",
+        requires = "nvim-treesitter",
+    }
+    use {
+        "nvim-treesitter/nvim-treesitter-refactor",
+        requires = "nvim-treesitter",
+    }
+    use {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        requires = "nvim-treesitter",
+    }
     use {
         "dstein64/vim-startuptime",
         cmd = "StartupTime",
+        opt = true,
     }
 
 
@@ -187,6 +199,7 @@ return packer.startup(function()
         end,
         -- cmd = {'HopWord', 'HopPattern'},
     }
+    -- 'tabout' is imcompatible with 'nvim-autopairs'
 
     -------------------------------------
     --------------- Edit ----------------
@@ -203,17 +216,16 @@ return packer.startup(function()
     use {
         'b3nj5m1n/kommentary',
         config = require('daoist1037.plugins_config.kommentary'),
-        --keys = {
-        --    "<Plug>kommentary_line_increase",
-        --    "<Plug>kommentary_line_decrease",
-        --}
     }  
-    -- use {   'tpope/vim-surround',}
-
-
-    --[[ use {
-        'glepnir/indent-guides.nvim',
-        config = require('daoist1037.plugins_config.indent-guides')
-    } ]]
+    use {
+        "blackCauldron7/surround.nvim",
+        config = function()
+            require("surround").setup { mappings_style = "sandwich" }
+        end,
+        --- add: sa{motion/textobject}{delimiter}
+        --- delete: sd{delimiter}
+        --- replace: sr{old}{new}
+        --- ss repeats last surround command.
+    }
 
 end)

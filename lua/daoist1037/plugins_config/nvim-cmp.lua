@@ -57,9 +57,10 @@ return function()
             end, ]]
         },
         sources = {
-            { name = 'orgmode' },
+            -- { name = 'orgmode' },
             { name = 'nvim_lsp' },
             { name = 'treesitter' },
+            { name = 'cmdline' },
 
             -- For vsnip user.
             --   { name = 'vsnip' },
