@@ -77,19 +77,17 @@ return packer.startup(function()
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
-        -- opt = true,
-        -- after = 'nvim-web-devicons',
         config = require('daoist1037.plugins_config.lualine'),
     }
     use {
         'akinsho/bufferline.nvim',
-        -- opt = true,
-        -- after = 'nvim-web-devicons',
         config = require('daoist1037.plugins_config.bufferline'),
-        event = 'BufRead',
+        -- event = 'BufRead',
         -- event = 'User ActuallyEditing',
     }
-    use {'yamatsum/nvim-cursorline'}
+    use {
+        'yamatsum/nvim-cursorline',
+    }
     --[[ use {
         'p00f/nvim-ts-rainbow',
         config = require('daoist1037.plugins_config.nvim-ts-rainbow'),
@@ -105,16 +103,23 @@ return packer.startup(function()
         -- opt = true,
         config = require('daoist1037.plugins_config.nvim-lspconfig'),
     } 
-    --[[ use {
+    use {
         'tami5/lspsaga.nvim',
         config = require('daoist1037.plugins_config.lspsaga'),
-    } ]]
+        --[[ cmd = {
+            "lua require('lspsaga.hover').render_hover_doc()",
+            "lua require('lspsaga.signaturehelp').signature_help()",
+            "lua require('lspsaga.rename').rename()",
+            "lua require'lspsaga.provider'.preview_definition()",
+            "lua require'lspsaga.provider'.lsp_finder()",
+        } ]]
+    }
     use {
         "hrsh7th/nvim-cmp",
         requires = {
-            {'L3MON4D3/LuaSnip'},
+            {'L3MON4D3/LuaSnip', after = 'nvim-cmp'},
             {"hrsh7th/cmp-nvim-lsp", after = 'nvim-cmp'},
-            "onsails/lspkind-nvim",
+            {"onsails/lspkind-nvim"},
             {"hrsh7th/cmp-buffer", after = 'nvim-cmp'},
             {"hrsh7th/cmp-nvim-lua", after = 'nvim-cmp'},
             {"hrsh7th/cmp-path", after = 'nvim-cmp'},
@@ -127,11 +132,13 @@ return packer.startup(function()
     }  
     use {
         'williamboman/nvim-lsp-installer',
-        opt = true,
-        after = 'nvim-lspconfig',
+        -- opt = true,
+        -- after = 'nvim-lspconfig',
     }
     use {
         "ray-x/lsp_signature.nvim",
+        opt = true,
+        -- disable = true,
     }
 
 
@@ -142,7 +149,6 @@ return packer.startup(function()
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
         config = require('daoist1037.plugins_config.nvim-tree'),
-        opt = true,
         cmd = {'NvimTreeToggle',  'NvimFocus'},
     }
     use {"nvim-lua/plenary.nvim",}
@@ -170,7 +176,6 @@ return packer.startup(function()
     use {
         "folke/which-key.nvim",
         config = require('daoist1037.plugins_config.which-key'),
-        opt = true,
         event = 'VimEnter',
     }
     use {
@@ -180,13 +185,15 @@ return packer.startup(function()
             require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
             -- vim.api.nvim_set_keymap('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words()<cr>", {})
         end,
+        -- cmd = {'HopWord', 'HopPattern'},
     }
 
     -------------------------------------
     --------------- Edit ----------------
     -------------------------------------
     use {
-        'machakann/vim-highlightedyank'
+        'machakann/vim-highlightedyank',
+        event = 'TextYankPost *',
     }
     use {
         'windwp/nvim-autopairs',
@@ -195,7 +202,11 @@ return packer.startup(function()
     }
     use {
         'b3nj5m1n/kommentary',
-        config = require('daoist1037.plugins_config.kommentary')
+        config = require('daoist1037.plugins_config.kommentary'),
+        --keys = {
+        --    "<Plug>kommentary_line_increase",
+        --    "<Plug>kommentary_line_decrease",
+        --}
     }  
     -- use {   'tpope/vim-surround',}
 

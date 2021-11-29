@@ -45,6 +45,10 @@ return {
 --  {'n', '<leader>ld', "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>" },
 --  {'n', '<leader>lc', "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>" },
 
+--{'n', '<leader>ci', "<Plug>kommentary_line_increase"},
+--{'x', '<leader>ci', "<Plug>kommentary_line_increase"},
+--{'n', '<leader>cd', "<Plug>kommentary_line_decrease"},
+--{'x', '<leader>cd', "<Plug>kommentary_line_decrease"},
 
 
 }
