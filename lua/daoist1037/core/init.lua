@@ -32,7 +32,7 @@ end
 end ]]
 
 require('daoist1037.core.pack')
-vim.cmd[[autocmd FileType dashboard set list=false]]
+-- vim.cmd[[autocmd FileType dashboard set list=false]]
 
 --[[ vim.cmd "silent! command PackerCompile lua require 'daoist1037.pack' require('packer').compile()"
 vim.cmd "silent! command PackerInstall lua require 'daoist1037.pack' require('packer').install()"
