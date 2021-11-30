@@ -65,10 +65,19 @@ return function()
 
             ["<leader>p"] = { name = "+Packer" },
 
-            ["<leader>pi"] = { "<Cmd>PackerInstall<CR>", "PackerInstall" },
+            --[[ ["<leader>pi"] = { "<Cmd>PackerInstall<CR>", "PackerInstall" },
             ["<leader>pc"] = { "<Cmd>PackerCompile<CR>", "PackerCompile" },
-            ["<leader>ps"] = { "<Cmd>PackerStatus<CR>", "PackerStatus" },
             ["<leader>pC"] = { "<Cmd>PackerClean<CR>", "PackerClean" },
+            ["<leader>ps"] = { "<Cmd>PackerStatus<CR>", "PackerStatus" },
+            ["<leader>pS"] = { "<Cmd>PackerSync<CR>", "PackerSync" },
+            ["<leader>pu"] = { "<Cmd>PackerUpdate<CR>", "PackerUpdate" }, ]]
+
+            ["<leader>pi"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').install()<CR>", "PackerInstall" },
+            ["<leader>pc"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').compile()<CR>", "PackerCompile" },
+            ["<leader>pC"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').clean()<CR>", "PackerClean" },
+            ["<leader>ps"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').status()<CR>", "PackerStatus" },
+            ["<leader>pS"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').sync()<CR>", "PackerSync" },
+            ["<leader>pu"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').update()<CR>", "PackerUpdate" },
 
             ["<leader><leader>"] = { name = "+hop" },
             ["<leader><Leader>w"] = { "<cmd>lua require'hop'.hint_words()<cr>", "HopWord" },

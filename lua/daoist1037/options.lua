@@ -26,7 +26,8 @@ return {
         -- nobackup = true,
         -- noswapfile = true,
         encoding = "utf-8",
-        listchars="tab:>-,space:▯",
+        -- listchars="tab:>-,space:▯",
+        listchars="tab:>-,space:⋅,eol:↴",
         -- "tab:»·,nbsp:+,trail:·,extends:→,precedes:←",
         -- list = true
         -- backupdir="~/.local/.vim/.backup//",

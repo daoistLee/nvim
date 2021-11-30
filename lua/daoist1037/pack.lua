@@ -63,7 +63,7 @@ return packer.startup(function()
     use {
         'navarasu/onedark.nvim',
         config = function()
-            vim.g.onedark_style = 'dark'
+            vim.g.onedark_style = 'cool'
             vim.g.onedark_toggle_style_keymap = '<nop>'
             -- vim.g.onedark_transparent_background = true
             require('onedark').setup()
@@ -71,8 +71,12 @@ return packer.startup(function()
     }
     use { 'kyazdani42/nvim-web-devicons' ,}
     use {
-        'glepnir/dashboard-nvim',
-        config = require('daoist1037.plugins_config.dashboard-nvim')
+        'goolord/alpha-nvim',
+        config = require('daoist1037.plugins_config.alpha'),
+        -- config = function ()
+            -- require'alpha'.setup(require'alpha.themes.startify'.opts)
+            -- require'alpha'.setup(require'alpha.themes.dashboard'.opts)
+        -- end
     }
     use {
         'hoob3rt/lualine.nvim',
@@ -88,11 +92,10 @@ return packer.startup(function()
     use {
         'yamatsum/nvim-cursorline',
     }
-    --[[ use {
-        'p00f/nvim-ts-rainbow',
-        config = require('daoist1037.plugins_config.nvim-ts-rainbow'),
-        -- event = 'BufRead',
-    } ]]
+    use {
+        'glepnir/indent-guides.nvim',
+        config = require('daoist1037.plugins_config.indent-guides'),
+    }
 
 
     -------------------------------------
@@ -199,7 +202,7 @@ return packer.startup(function()
         end,
         -- cmd = {'HopWord', 'HopPattern'},
     }
-    -- 'tabout' is imcompatible with 'nvim-autopairs'
+    -- 'tabout' is incompatible with 'nvim-autopairs'
 
     -------------------------------------
     --------------- Edit ----------------

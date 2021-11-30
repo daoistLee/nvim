@@ -54,57 +54,89 @@ completeopt = 'menuone,noinsert',
 ## Disable
 
 ```lua
-  vim.g.loaded_gzip              = 1
-  vim.g.loaded_tar               = 1
-  vim.g.loaded_tarPlugin         = 1
-  vim.g.loaded_zip               = 1
-  vim.g.loaded_zipPlugin         = 1
-  vim.g.loaded_getscript         = 1
-  vim.g.loaded_getscriptPlugin   = 1
-  vim.g.loaded_vimball           = 1
-  vim.g.loaded_vimballPlugin     = 1
-  vim.g.loaded_matchit           = 1
-  vim.g.loaded_matchparen        = 1
-  vim.g.loaded_2html_plugin      = 1
-  vim.g.loaded_logiPat           = 1
-  vim.g.loaded_rrhelper          = 1
-  vim.g.loaded_netrw             = 1
-  vim.g.loaded_netrwPlugin       = 1
-  vim.g.loaded_netrwSettings     = 1
-  vim.g.loaded_netrwFileHandlers = 1
-
+vim.g.loaded_gzip              = 1
+vim.g.loaded_tar               = 1
+vim.g.loaded_tarPlugin         = 1
+vim.g.loaded_zip               = 1
+vim.g.loaded_zipPlugin         = 1
+vim.g.loaded_getscript         = 1
+vim.g.loaded_getscriptPlugin   = 1
+vim.g.loaded_vimball           = 1
+vim.g.loaded_vimballPlugin     = 1
+vim.g.loaded_matchit           = 1
+vim.g.loaded_matchparen        = 1
+vim.g.loaded_2html_plugin      = 1
+vim.g.loaded_logiPat           = 1
+vim.g.loaded_rrhelper          = 1
+vim.g.loaded_netrw             = 1
+vim.g.loaded_netrwPlugin       = 1
+vim.g.loaded_netrwSettings     = 1
+vim.g.loaded_netrwFileHandlers = 1
+vim.g.loaded_spellfile_plugin  = 1
 ```
 
 ## Plugins
 
 ```
 ~/.config/nvim/..
-│  .git
-│  ✗ lua
-│ └  ✗ daoist1037
-│   │  ✗ plugins_config
-│   │ │  bufferline.lua
-│   │ │  dashboard-nvim.lua
-│   │ │  indent-guides.lua
-│   │ │  kommentary.lua
-│   │ │  lspsaga.lua
-│   │ │  lualine.lua
-│   │ │  nvim-autopairs.lua
-│   │ │  ✗ nvim-cmp.lua
-│   │ │  nvim-lspconfig.lua
-│   │ │  ✗ nvim-tree.lua
-│   │ │  nvim-treesitter.lua
-│   │ │  nvim-ts-rainbow.lua
-│   │ │  telescope.lua
-│   │ └  ✗ which-key.lua
-│   │  disable.lua
-│   │  ✗ init.lua
-│   │  ✗ mappings.lua
-│   │  options.lua
-│   └  ✗ pack.lua
-│  ✗ plugin
-│  init.lua
-└ ✗ README.md
+-------------------------------------
+------------ Packer -----------------
+-------------------------------------
+"wbthomason/packer.nvim",
+-------------------------------------
+-------------- UI -------------------
+-------------------------------------
+'norcalli/nvim-colorizer.lua',
+'navarasu/onedark.nvim',
+'kyazdani42/nvim-web-devicons'
+'goolord/alpha-nvim',
+'hoob3rt/lualine.nvim',
+'akinsho/bufferline.nvim',
+'yamatsum/nvim-cursorline',
+'glepnir/indent-guides.nvim',
+-------------------------------------
+-------------- LSP ------------------
+-------------------------------------
+'neovim/nvim-lspconfig',
+'tami5/lspsaga.nvim',
+"hrsh7th/nvim-cmp",
+'L3MON4D3/LuaSnip'
+"hrsh7th/cmp-nvim-lsp",
+"hrsh7th/cmp-nvim-lsp-document-symbol",
+"hrsh7th/cmp-cmdline",
+"onsails/lspkind-nvim"},
+"hrsh7th/cmp-buffer",
+"hrsh7th/cmp-nvim-lua",
+"hrsh7th/cmp-path",
+"octaltree/cmp-look",
+"f3fora/cmp-spell",
+'saadparwaiz1/cmp_luasnip',,
+'williamboman/nvim-lsp-installer',
+"ray-x/lsp_signature.nvim",
+-------------------------------------
+------------- Tools -----------------
+-------------------------------------
+'kyazdani42/nvim-tree.lua',
+"nvim-lua/plenary.nvim"
+'nvim-telescope/telescope.nvim',
+'nvim-treesitter/nvim-treesitter',
+"nvim-treesitter/playground",
+"nvim-treesitter/completion-treesitter",
+"nvim-treesitter/nvim-treesitter-refactor",
+"nvim-treesitter/nvim-treesitter-textobjects",
+"dstein64/vim-startuptime",
+-------------------------------------
+--------------- Keys ----------------
+-------------------------------------
+"folke/which-key.nvim",
+'phaazon/hop.nvim',
+-------------------------------------
+--------------- Edit ----------------
+-------------------------------------
+'machakann/vim-highlightedyank',
+'windwp/nvim-autopairs',
+'b3nj5m1n/kommentary',
+"blackCauldron7/surround.nvim",
 ```
 
 ## Mapping
@@ -112,11 +144,19 @@ completeopt = 'menuone,noinsert',
 ```lua
 {'i', 'jk', '<Esc>' },
 {'n', '<backspace>', '<Cmd>nohl<CR>' },
-{'n', 'K', "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>" },
-{'n', 'gs', "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>" },
-{'n', 'gr', "<cmd>lua require('lspsaga.rename').rename()<CR>" },
-{'n', 'gd', "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>" },
-{'n', 'gh', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>" },
+-- keep visual selection when (de)indenting
+{'v', '<', '<gv'},
+{'v', '>', '>gv'},
+
+-- Select last pasted/yanked text 
+{'n', 'g<C-v>', "`[v`]"},
+
+ {'n', 'K', "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>" },
+ {'n', 'gs', "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>" },
+ {'n', 'gr', "<cmd>lua require('lspsaga.rename').rename()<CR>" },
+ {'n', 'gd', "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>" },
+ {'n', 'gh', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>" },
+
 ["<leader>f"] = { name = "+file" },
 ["<leader>fF"] = { "<cmd>Telescope find_files<cr>", "Find File" },
 ["<leader>ff"] = { "<cmd>Telescope file_browser<cr>", "File browser" },
@@ -145,13 +185,13 @@ completeopt = 'menuone,noinsert',
 ["<leader>nt"] = { "<Cmd>NvimTreeToggle<CR>", "NvimTree Toggle" },
 ["<leader>no"] = { "<Cmd>NvimTreeFocus<CR>", "NvimTree Focus" },
 
-
 ["<leader>p"] = { name = "+Packer" },
-
-["<leader>pi"] = { "<Cmd>PackerInstall<CR>", "PackerInstall" },
-["<leader>pc"] = { "<Cmd>PackerCompile<CR>", "PackerCompile" },
-["<leader>ps"] = { "<Cmd>PackerStatus<CR>", "PackerStatus" },
-["<leader>pC"] = { "<Cmd>PackerClean<CR>", "PackerClean" },
+["<leader>pi"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').install()<CR>", "PackerInstall" },
+["<leader>pc"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').compile()<CR>", "PackerCompile" },
+["<leader>pC"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').clean()<CR>", "PackerClean" },
+["<leader>ps"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').status()<CR>", "PackerStatus" },
+["<leader>pS"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').sync()<CR>", "PackerSync" },
+["<leader>pu"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').update()<CR>", "PackerUpdate" },
 
 ["<leader><leader>"] = { name = "+hop" },
 ["<leader><Leader>w"] = { "<cmd>lua require'hop'.hint_words()<cr>", "HopWord" },

@@ -29,20 +29,12 @@ end
   require'cmp'.setup.buffer { completion = {enable = false} }
 end ]]
 
+require('daoist1037.pack')
+vim.cmd[[autocmd FileType dashboard set list=false]]
 
-vim.cmd "silent! command PackerCompile lua require 'daoist1037.pack' require('packer').compile()"
+--[[ vim.cmd "silent! command PackerCompile lua require 'daoist1037.pack' require('packer').compile()"
 vim.cmd "silent! command PackerInstall lua require 'daoist1037.pack' require('packer').install()"
 vim.cmd "silent! command PackerStatus lua require 'daoist1037.pack' require('packer').status()"
 vim.cmd "silent! command PackerSync lua require 'daoist1037.pack' require('packer').sync()"
 vim.cmd "silent! command PackerUpdate lua require 'daoist1037.pack' require('packer').update()"
-vim.cmd "silent! command PackerClean lua require 'daoist1037.pack' require('packer').clean()"
--- vim.g.oceanic_next_terminal_bold = 1
--- vim.g.oceanic_next_terminal_italic = 1
--- vim.cmd "colorscheme OceanicNext"
--- vim.cmd "colorscheme zephyr"
---[[ vim.cmd "colorscheme onedark"
-vim.g.onedark_style = 'cool' ]]
---vim.g.onedark_transparent_bg = 1
--- vim.g.transparent_enabled="enable"
--- vim.g.material_style = 'darker'
-
+vim.cmd "silent! command PackerClean lua require 'daoist1037.pack' require('packer').clean()" ]]
