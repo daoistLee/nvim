@@ -8,10 +8,10 @@ return function()
         indent_space_guides = true,
         indent_tab_guides = true,
         indent_soft_pattern = '\\s',
-        exclude_filetypes = {'help','dashboard','dashpreview','vista','sagahover','terminal','TelescopePrompt', 'NvimTree', 'alpha', 'startify'},
-        -- exclude_filetypes = {'help','dashboard','dashpreview','vista','sagahover','terminal','TelescopePrompt', 'NvimTree'},
+        exclude_filetypes = {'help','dashboard','dashpreview','vista','sagahover','terminal','TelescopePrompt', 'NvimTree', 'alpha', 'packer'},
         buftype_exclude = {"terminal", "nofile"},
         even_colors = { fg ='#2a3834',bg='#332b36' },
         odd_colors = {fg='#332b36',bg='#2a3834'},
     })
 end
+-- 'startify', 

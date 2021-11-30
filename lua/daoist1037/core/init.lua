@@ -2,12 +2,14 @@
 -- https://stackoverflow.com/questions/44480829/how-to-copy-to-clipboard-in-vim-of-bash-on-windows 
 vim.cmd "autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif"
 vim.cmd [[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]
+vim.g.python_host_skip_check=1
+vim.g.python3_host_skip_check=1
 vim.g.python3_host_prog = '/usr/bin/python3'
-local options = require('daoist1037.options')
+local options = require('daoist1037.core.options')
 for o,v in pairs(options) do
    vim.opt[o] = v
 end
-local disable = require('daoist1037.disable')
+local disable = require('daoist1037.core.disable')
 
 local function map(mode, lhs, rhs, opts)
    local options = { noremap = true, silent = true }
@@ -20,7 +22,7 @@ end
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
-mappings = require('daoist1037.mappings')
+mappings = require('daoist1037.core.mappings')
 for _,list in pairs(mappings) do
 	map(list[1], list[2], list[3])
 end
@@ -29,7 +31,7 @@ end
   require'cmp'.setup.buffer { completion = {enable = false} }
 end ]]
 
-require('daoist1037.pack')
+require('daoist1037.core.pack')
 vim.cmd[[autocmd FileType dashboard set list=false]]
 
 --[[ vim.cmd "silent! command PackerCompile lua require 'daoist1037.pack' require('packer').compile()"

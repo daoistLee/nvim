@@ -49,8 +49,6 @@ return packer.startup(function()
         "wbthomason/packer.nvim",
         event = "VimEnter",
     }
-
-
     -------------------------------------
     -------------- UI -------------------
     -------------------------------------
@@ -96,8 +94,6 @@ return packer.startup(function()
         'glepnir/indent-guides.nvim',
         config = require('daoist1037.plugins_config.indent-guides'),
     }
-
-
     -------------------------------------
     -------------- LSP ------------------
     -------------------------------------
@@ -138,8 +134,6 @@ return packer.startup(function()
         -- opt = true,
         -- disable = true,
     }
-
-
     -------------------------------------
     ------------- Tools -----------------
     -------------------------------------
@@ -183,8 +177,6 @@ return packer.startup(function()
         cmd = "StartupTime",
         opt = true,
     }
-
-
     -------------------------------------
     --------------- Keys ----------------
     -------------------------------------
@@ -200,7 +192,6 @@ return packer.startup(function()
             require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
             -- vim.api.nvim_set_keymap('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words()<cr>", {})
         end,
-        -- cmd = {'HopWord', 'HopPattern'},
     }
     -- 'tabout' is incompatible with 'nvim-autopairs'
 
@@ -218,7 +209,6 @@ return packer.startup(function()
     }
     use {
         'b3nj5m1n/kommentary',
-        config = require('daoist1037.plugins_config.kommentary'),
     }  
     use {
         "blackCauldron7/surround.nvim",

@@ -1,4 +1,4 @@
-require('daoist1037')
+require('daoist1037.core')
 -- vim.cmd([[
 --   augroup packer_user_config
 --     autocmd!

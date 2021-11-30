@@ -45,7 +45,6 @@ return function()
             ["<leader>fd"] = { "<cmd>edit ~/.config/nvim/lua/daoist1037/init.lua<cr>", "Edit init.lua" },
 
             ["<leader>w"] = { name = "+window" },
-            -- ["<leader>wc"] = { "<C-w>c", "window conceal" },
             ["<leader>wq"] = { "<Cmd>qall!<CR>", "window Exit" },
             ["<leader>wc"] = { "<Cmd>quit!<CR>", "window conceal" },
             ["<leader>ww"] = { "<C-w>w", "window next" },
@@ -55,12 +54,10 @@ return function()
             ["<leader>wl"] = { "<C-w>l", "window right" },
             ["<leader>w-"] = { "<Cmd>sp<CR><C-w>j", "split" },
             ["<leader>w\\"] = { "<Cmd>vsp<CR><C-w>l", "vsplit" },
-            -- ["<leader>wn"] = { "<Cmd>lua require('nvim-window').pick()<CR>", "nvim-window" },
 
             ["<leader>n"] = { name = "+nvimtree" },
             ["<leader>nt"] = { "<Cmd>NvimTreeToggle<CR>", "NvimTree Toggle" },
             ["<leader>no"] = { "<Cmd>NvimTreeFocus<CR>", "NvimTree Focus" },
-            -- ["<leader>nf"] = { "<Cmd>NvimTreeFindFile<CR>", "NvimTree FindFile" },
 
 
             ["<leader>p"] = { name = "+Packer" },
@@ -72,12 +69,12 @@ return function()
             ["<leader>pS"] = { "<Cmd>PackerSync<CR>", "PackerSync" },
             ["<leader>pu"] = { "<Cmd>PackerUpdate<CR>", "PackerUpdate" }, ]]
 
-            ["<leader>pi"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').install()<CR>", "PackerInstall" },
-            ["<leader>pc"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').compile()<CR>", "PackerCompile" },
-            ["<leader>pC"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').clean()<CR>", "PackerClean" },
-            ["<leader>ps"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').status()<CR>", "PackerStatus" },
-            ["<leader>pS"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').sync()<CR>", "PackerSync" },
-            ["<leader>pu"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').update()<CR>", "PackerUpdate" },
+            ["<leader>pi"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').install()<CR>", "PackerInstall" },
+            ["<leader>pc"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').compile()<CR>", "PackerCompile" },
+            ["<leader>pC"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').clean()<CR>", "PackerClean" },
+            ["<leader>ps"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').status()<CR>", "PackerStatus" },
+            ["<leader>pS"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').sync()<CR>", "PackerSync" },
+            ["<leader>pu"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').update()<CR>", "PackerUpdate" },
 
             ["<leader><leader>"] = { name = "+hop" },
             ["<leader><Leader>w"] = { "<cmd>lua require'hop'.hint_words()<cr>", "HopWord" },
@@ -95,5 +92,18 @@ return function()
             -- ["<leader>lq"] = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "set_loclist" },
             -- ["<leader>lf"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "formatting" },
 
+            ["<leader>c"] = { name = "+kommentary" },
+            ["<leader>ci"] = { "<Plug>kommentary_line_increase", "increase" },
+            ["<leader>cd"] = { "<Plug>kommentary_line_decrease", "decrease" },
         }
+        wk.register(
+            {
+                ["<leader>c"] = { name = "+kommentary" },
+                ["<leader>ci"] = { "<Plug>kommentary_visual_increase", "increase" },
+                ["<leader>cd"] = { "<plug>kommentary_visual_decrease", "decrease" },
+            },
+            {
+                mode = 'v',
+            }
+        )
     end
