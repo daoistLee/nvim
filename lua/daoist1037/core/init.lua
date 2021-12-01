@@ -30,7 +30,6 @@ end
 --[[ if vim.o.ft == 'clap_input' and vim.o.ft == 'guihua' and vim.o.ft == 'guihua_rust' then
   require'cmp'.setup.buffer { completion = {enable = false} }
 end ]]
-
 require('daoist1037.core.pack')
 -- vim.cmd[[autocmd FileType dashboard set list=false]]
 

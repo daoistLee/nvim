@@ -1,8 +1,6 @@
 return function()
     require('telescope').setup {
         defaults = {
-            -- scroll_strategy = [[limit]],
-            -- initial_mode = [[normal]]
             dynamic_preview_title = true,
 
         },

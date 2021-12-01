@@ -104,7 +104,7 @@ vim.g.loaded_spellfile_plugin  = 1
 "hrsh7th/cmp-nvim-lsp",
 "hrsh7th/cmp-nvim-lsp-document-symbol",
 "hrsh7th/cmp-cmdline",
-"onsails/lspkind-nvim"},
+"onsails/lspkind-nvim",
 "hrsh7th/cmp-buffer",
 "hrsh7th/cmp-nvim-lua",
 "hrsh7th/cmp-path",
@@ -139,7 +139,7 @@ vim.g.loaded_spellfile_plugin  = 1
 "blackCauldron7/surround.nvim",
 ```
 
-## Mapping
+## Mappings
 
 ```lua
 {'i', 'jk', '<Esc>' },
@@ -186,15 +186,19 @@ vim.g.loaded_spellfile_plugin  = 1
 ["<leader>no"] = { "<Cmd>NvimTreeFocus<CR>", "NvimTree Focus" },
 
 ["<leader>p"] = { name = "+Packer" },
-["<leader>pi"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').install()<CR>", "PackerInstall" },
-["<leader>pc"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').compile()<CR>", "PackerCompile" },
-["<leader>pC"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').clean()<CR>", "PackerClean" },
-["<leader>ps"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').status()<CR>", "PackerStatus" },
-["<leader>pS"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').sync()<CR>", "PackerSync" },
-["<leader>pu"] = { "<Cmd>lua require 'daoist1037.pack' require('packer').update()<CR>", "PackerUpdate" },
+["<leader>pi"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').install()<CR>", "PackerInstall" },
+["<leader>pc"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').compile()<CR>", "PackerCompile" },
+["<leader>pC"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').clean()<CR>", "PackerClean" },
+["<leader>ps"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').status()<CR>", "PackerStatus" },
+["<leader>pS"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').sync()<CR>", "PackerSync" },
+["<leader>pu"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').update()<CR>", "PackerUpdate" },
 
 ["<leader><leader>"] = { name = "+hop" },
 ["<leader><Leader>w"] = { "<cmd>lua require'hop'.hint_words()<cr>", "HopWord" },
 ["<leader><Leader>p"] = { "<cmd>lua require'hop'.hint_patterns()<cr>", "HopPattern" },
+
+["<leader>c"] = { name = "+kommentary" },
+["<leader>ci"] = { "<Plug>kommentary_line_increase", "increase" },
+["<leader>cd"] = { "<Plug>kommentary_line_decrease", "decrease" },
 ```
 
