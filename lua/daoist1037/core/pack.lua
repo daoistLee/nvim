@@ -89,22 +89,31 @@ return packer.startup(function()
     }
     use {
         'yamatsum/nvim-cursorline',
+        event={ 'BufReadPre', 'BufNewFile'},
     }
     use {
         'glepnir/indent-guides.nvim',
         config = require('daoist1037.plugins_config.indent-guides'),
+        --[[ opt = true,
+        after = 'nvim-treesitter', ]]
+        -- event = 'BufRead',
     }
     -------------------------------------
     -------------- LSP ------------------
     -------------------------------------
     use {
         'neovim/nvim-lspconfig',
-        -- opt = true,
         config = require('daoist1037.plugins_config.nvim-lspconfig'),
+        -- opt = true,
+        event = {'BufReadPre', 'BufNewFile'},
+        -- event = 'BufRead',
     } 
     use {
         'tami5/lspsaga.nvim',
         config = require('daoist1037.plugins_config.lspsaga'),
+        -- opt = true,
+        -- after = 'nvim-lspconfig',
+        cmd = 'Lspsaga',
     }
     use {
         "hrsh7th/nvim-cmp",
@@ -126,13 +135,22 @@ return packer.startup(function()
     }  
     use {
         'williamboman/nvim-lsp-installer',
-        -- opt = true,
-        -- after = 'nvim-lspconfig',
+        opt = true,
+        after = 'nvim-lspconfig',
     }
     use {
         "ray-x/lsp_signature.nvim",
-        -- opt = true,
+        opt = true,
+        after = 'nvim-lspconfig',
         -- disable = true,
+    }
+    use {
+        'nathom/filetype.nvim',
+        config = function()
+            require('filetype').setup({
+                overrides = {}
+            })
+        end
     }
     -------------------------------------
     ------------- Tools -----------------
@@ -144,33 +162,49 @@ return packer.startup(function()
         config = require('daoist1037.plugins_config.nvim-tree'),
         cmd = {'NvimTreeToggle',  'NvimFocus'},
     }
-    use {"nvim-lua/plenary.nvim",}
+    --[[ use {
+        "nvim-lua/plenary.nvim",
+        opt = false,
+    } ]]
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} },
+        requires = { 
+            {'nvim-lua/plenary.nvim', opt = false,},
+            {'nvim-lua/popup.nvim', opt = true,}
+        },
         config = require('daoist1037.plugins_config.telescope'),
         cmd = 'Telescope',
     }
     use {
         'nvim-treesitter/nvim-treesitter',
         -- config = require('daoist1037.plugins_config.nvim-treesitter'),
-        -- event = 'BufRead',
+        opt = true,
+        run = 'TSUpdate',
+        event = 'BufRead',
     }
     use {
         "nvim-treesitter/playground",
-        requires = "nvim-treesitter",
+        opt = true,
+        after = 'nvim-treesitter',
+        -- requires = "nvim-treesitter",
     }
     use {
         "nvim-treesitter/completion-treesitter",
-        requires = "nvim-treesitter",
+        opt = true,
+        after = 'nvim-treesitter',
+        -- requires = "nvim-treesitter",
     }
     use {
         "nvim-treesitter/nvim-treesitter-refactor",
-        requires = "nvim-treesitter",
+        opt = true,
+        after = 'nvim-treesitter',
+        -- requires = "nvim-treesitter",
     }
     use {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        requires = "nvim-treesitter",
+        opt = true,
+        after = 'nvim-treesitter',
+        -- requires = "nvim-treesitter",
     }
     use {
         "dstein64/vim-startuptime",
@@ -192,6 +226,9 @@ return packer.startup(function()
             require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
             -- vim.api.nvim_set_keymap('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words()<cr>", {})
         end,
+        cmd = {
+            'HopLine', 'HopLineStart', 'HopWord','HopPattern', 'HopChar1', 'HopChar2',
+        }
     }
     -- 'tabout' is incompatible with 'nvim-autopairs'
 
@@ -205,6 +242,7 @@ return packer.startup(function()
     use {
         'windwp/nvim-autopairs',
         config = require('daoist1037.plugins_config.nvim-autopairs'),
+        -- after = 'nvim-cmp',
         event = 'InsertEnter *',
     }
     use {
@@ -215,6 +253,7 @@ return packer.startup(function()
         config = function()
             require("surround").setup { mappings_style = "sandwich" }
         end,
+        event = 'BufRead',
         --- add: sa{motion/textobject}{delimiter}
         --- delete: sd{delimiter}
         --- replace: sr{old}{new}

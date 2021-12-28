@@ -42,7 +42,7 @@ return function()
 
             ["<leader>fs"] = { "<cmd>w!<cr>", "Save File" },
             ["<leader>fn"] = { "<cmd>enew<cr>", "New File" },
-            ["<leader>fd"] = { "<cmd>edit ~/.config/nvim/lua/daoist1037/init.lua<cr>", "Edit init.lua" },
+            ["<leader>fd"] = { "<cmd>edit ~/dotfiles/nvim/init.lua<cr>", "Edit init.lua" },
 
             ["<leader>w"] = { name = "+window" },
             ["<leader>wq"] = { "<Cmd>qall!<CR>", "window Exit" },
@@ -77,8 +77,8 @@ return function()
             ["<leader>pu"] = { "<Cmd>lua require 'daoist1037.core.pack' require('packer').update()<CR>", "PackerUpdate" },
 
             ["<leader><leader>"] = { name = "+hop" },
-            ["<leader><Leader>w"] = { "<cmd>lua require'hop'.hint_words()<cr>", "HopWord" },
-            ["<leader><Leader>p"] = { "<cmd>lua require'hop'.hint_patterns()<cr>", "HopPattern" },
+            ["<leader><Leader>w"] = { "<cmd>HopWord<cr>", "HopWord" },
+            ["<leader><Leader>p"] = { "<cmd>HopPattern<cr>", "HopPattern" },
             -- ["<leader>l"] = { name = "+Lsp" },
             -- ["<leader>lD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "declaration" },
             -- ["<leader>ld"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "definition" },

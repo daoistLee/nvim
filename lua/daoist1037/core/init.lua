@@ -4,7 +4,8 @@ vim.cmd "autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/
 vim.cmd [[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]
 vim.g.python_host_skip_check=1
 vim.g.python3_host_skip_check=1
-vim.g.python3_host_prog = '/usr/bin/python3'
+-- vim.g.python3_host_prog = '/usr/bin/python3'
+vim.g.python3_host_prog = '/home/daoist/Programs/miniconda3/envs/neovim/bin/python3'
 local options = require('daoist1037.core.options')
 for o,v in pairs(options) do
    vim.opt[o] = v
