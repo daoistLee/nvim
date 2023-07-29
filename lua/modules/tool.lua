@@ -1,7 +1,4 @@
 local tool = {}
-tool["lewis6991/impatient.nvim"] = {
-    lazy = true,
-}
 tool["gelguy/wilder.nvim"] = {
     lazy = true,
     dependencies = { "romgrk/fzy-lua-native"},
@@ -43,7 +40,7 @@ tool["h-hg/fcitx.nvim"] = {
 }
 tool["nvim-telescope/telescope-fzf-native.nvim"] = {
     lazy = true,
-    run = "make",
+    build = "make",
     -- after = "telescope.nvim",
 }
 tool["nvim-lua/plenary.nvim"] = {

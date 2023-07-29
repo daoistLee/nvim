@@ -1,7 +1,7 @@
 local lang = {}
-lang["nathom/filetype.nvim"] = {
-    config = require("configs.others").filetype,
-}
+-- lang["nathom/filetype.nvim"] = {
+--     config = require("configs.others").filetype,
+-- }
 lang["onsails/lspkind-nvim"] = {
     lazy = true,
 }
@@ -15,13 +15,13 @@ lang["mhartington/formatter.nvim"] = {
     ft = { "cpp", "c", "lua", "python" },
     -- cmd = { "Format", "FormatWrite" },
 }
-lang["j-hui/fidget.nvim"] = {
-    lazy = true,
-    config = function()
-        require("fidget").setup()
-    end,
-    ft = { "cpp", "c", "lua", "python" },
-}
+-- lang["j-hui/fidget.nvim"] = {
+--     lazy = true,
+--     config = function()
+--         require("fidget").setup()
+--     end,
+--     ft = { "cpp", "c", "lua", "python" },
+-- }
 lang["ray-x/lsp_signature.nvim"] = {
     lazy = true,
 }

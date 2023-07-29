@@ -1,6 +1,6 @@
 local data_dir = vim.fn.stdpath("data") .. "/site/"
 local packer = nil
-local modules = { "daps", "edit", "lang", "lsp", "tool", "ui" }
+local modules = { "edit", "lang", "lsp", "tool", "ui" }
 local lazy_path = data_dir .. "lazy/lazy.nvim"
 local Lazy = {}
 

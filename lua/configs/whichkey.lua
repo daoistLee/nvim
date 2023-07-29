@@ -46,7 +46,7 @@ return function()
         ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "help tags" },
         ["<leader>fd"] = { "<cmd>Telescope diagnostics<cr>", "diagnostics" },
         ["<leader>fs"] = { "<cmd>w!<cr>", "Save File" },
-        ["<leader>fe"] = { "<cmd>edit ~/dotfiles/nvim/lua/utils.lua<cr>", "Edit utils.lua" },
+        ["<leader>fe"] = { "<cmd>edit ~/.config/nvim/lua/utils.lua<cr>", "Edit utils.lua" },
         ["<leader>w"] = { name = "window" },
         ["<leader>wq"] = { "<Cmd>qall!<CR>", "window Exit" },
         ["<leader>wc"] = { "<Cmd>quit!<CR>", "window conceal" },
