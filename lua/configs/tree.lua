@@ -3,8 +3,8 @@ return function()
     nvim_tree.setup({
         disable_netrw = true,
         hijack_netrw = true,
-        open_on_setup = false,
-        ignore_ft_on_setup = {},
+        -- open_on_setup = false,
+        -- ignore_ft_on_setup = {},
         open_on_tab = false,
         hijack_cursor = true,
         update_cwd = true,
@@ -32,14 +32,14 @@ return function()
             timeout = 500,
         },
         filters = {
-            custom = {
-                ".git",
-                "node_modules",
-                ".cache",
-                "__pycache__",
-                ".vscode",
-                ".ipynb_checkpoints",
-            },
+            -- custom = {
+            --     ".git",
+            --     "node_modules",
+            --     ".cache",
+            --     "__pycache__",
+            --     ".vscode",
+            --     ".ipynb_checkpoints",
+            -- },
         },
         renderer = {
             indent_markers = {
@@ -115,9 +115,7 @@ return function()
                     enable = true,
                     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
                     exclude = {
-                        -- filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-                        -- buftype = { "nofile", "terminal", "help" },
-                        filetype = { "notify", "packer", "qf", "vista_kind", "Outline", "Trouble" },
+                        filetype = { "notify",  "qf", "vista_kind", "Outline", "Trouble" },
                         buftype = { "terminal", "help" },
                     },
                 },

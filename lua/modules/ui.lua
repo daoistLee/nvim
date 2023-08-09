@@ -12,14 +12,15 @@ ui["RRethy/vim-illuminate"] = {
 }
 ui["goolord/alpha-nvim"] = {
     lazy = true,
-    requires = { "kyazdani42/nvim-web-devicons" },
+    requires = {"nvim-tree/nvim-web-devicons"  },
     event = "BufWinEnter",
     config = require("configs.others").alpha,
 }
 ui["navarasu/onedark.nvim"] = {
     lazy = true,
 }
-ui["kyazdani42/nvim-web-devicons"] = {}
+-- ui["kyazdani42/nvim-web-devicons"] = {}
+ui["nvim-tree/nvim-web-devicons"] = {}
 ui["nvim-lualine/lualine.nvim"] = {
     lazy = true,
     config = require("configs.lualine"),
@@ -42,13 +43,13 @@ ui["lewis6991/gitsigns.nvim"] = {
     event = { "BufRead" },
     dependencies = { "plenary.nvim" },
 }
-ui["lukas-reineke/indent-blankline.nvim"] = {
-    lazy = true,
-    config = require("configs.blankline"),
-    -- opt = true,
-    event = "BufReadPre",
-    -- after = "nvim-treesitter",
-}
+-- ui["lukas-reineke/indent-blankline.nvim"] = {
+--     lazy = true,
+--     config = require("configs.blankline"),
+--     -- opt = true,
+--     event = "BufReadPre",
+--     -- after = "nvim-treesitter",
+-- }
 ui["akinsho/toggleterm.nvim"] = {
     lazy = true,
     config = require("configs.toggleterm"),
@@ -63,7 +64,6 @@ ui["rcarriga/nvim-notify"] = {
     lazy = true,
     config = require("configs.notify"),
     event = { "BufRead" },
-    -- opt = true,
     -- after = "alpha-nvim"
 }
 ui["dstein64/nvim-scrollview"] = {

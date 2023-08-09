@@ -26,16 +26,10 @@ lsp["williamboman/mason-lspconfig.nvim"] = {
     config = require("configs.mason").lspconfig,
     dependencies = { "mason.nvim" },
     -- ft = { "cpp", "lua", "python", "c" },
-    -- dependencies = { "cmp-nvim-lsp", "lsp_signature.nvim","vim-illuminate", "mason.nvim", "nvim-lspconfig" },
-    -- dependencies = { "cmp-nvim-lsp", "lsp_signature.nvim","vim-illuminate", "mason.nvim"  },
 }
 lsp["tami5/lspsaga.nvim"] = {
     lazy = true,
     config = require("configs.lspsaga"),
-    -- after = "nvim-lsp-installer",
-    -- after = "mason-lspconfig.nvim",
-    -- opt = true,
-    -- after = "nvim-lspconfig",
 }
 lsp["rafamadriz/friendly-snippets"] = {
     lazy = true,

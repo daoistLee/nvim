@@ -25,19 +25,6 @@ tool["sindrets/winshift.nvim"] = {
     event = "BufRead",
     config = require("configs.winshift"),
 }
-tool["beauwilliams/focus.nvim"] = {
-    lazy = true,
-    event = "BufRead",
-    cmd = { " FocusSplitNicely", "FocusSplitCycle" },
-    -- module = "focus",
-    config = function()
-        require("focus").setup({ hybridnumber = false })
-    end,
-}
-tool["h-hg/fcitx.nvim"] = {
-    lazy = true,
-    -- event = { "BufReadPre", "BufNewFile" },
-}
 tool["nvim-telescope/telescope-fzf-native.nvim"] = {
     lazy = true,
     build = "make",
@@ -91,8 +78,6 @@ tool["ethanholz/nvim-lastplace"] = {
 }
 tool["rhysd/clever-f.vim"] = {
     lazy = true,
-    -- opt = true,
-    -- event = "BufRead",
     config = require("configs.others").cleverf
 }
 tool['brooth/far.vim'] = {
@@ -100,9 +85,9 @@ tool['brooth/far.vim'] = {
     event = "BufRead",
     config = require("configs.others").far
 }
-tool['mg979/vim-visual-multi'] = {
-    lazy = true,
-    event = "BufRead",
-    config = require("configs.others").multi
-}
+-- tool['mg979/vim-visual-multi'] = {
+--     lazy = true,
+--     event = "BufRead",
+--     config = require("configs.others").multi
+-- }
 return tool

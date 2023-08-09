@@ -61,8 +61,4 @@ load_disable()
 load_options()
 load_map()
 
--- local plugins = require("plugins")
--- plugins.ensure_plugins()
--- plugins.load_compile()
-
 local lazy =  require("pack")
