@@ -37,14 +37,14 @@ local function load_options()
         vim.opt[o] = v
     end
     -- vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
-    vim.cmd([[ au TermOpen term://* setlocal nonumber norelativenumber | setfiletype terminal ]])
-    vim.cmd([[
-        augroup relative_numbser
-         autocmd!
-         autocmd InsertEnter * :set norelativenumber
-         autocmd InsertLeave * :set relativenumber
-        augroup END
-    ]])
+    -- vim.cmd([[ au TermOpen term://* setlocal nonumber norelativenumber | setfiletype terminal ]])
+    -- vim.cmd([[
+    --     augroup relative_numbser
+    --      autocmd!
+    --      autocmd InsertEnter * :set norelativenumber
+    --      autocmd InsertLeave * :set relativenumber
+    --     augroup END
+    -- ]])
 end
 local function load_map()
     vim.g.mapleader = " "
@@ -61,4 +61,4 @@ load_disable()
 load_options()
 load_map()
 
-local lazy =  require("pack")
+require("pack")

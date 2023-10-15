@@ -10,12 +10,12 @@ lsp["neovim/nvim-lspconfig"] = {
     lazy = true,
     config = require("configs.lspconfig"),
     ft = { "cpp", "lua", "python", "c", "java" },
-    dependencies = { "cmp-nvim-lsp", "lsp_signature.nvim", "vim-illuminate", "mason-lspconfig.nvim", "tami5/lspsaga.nvim" },
-    -- after = "fidget.nvim"
-    -- ft = { "cpp", "lua", "python", "c" },
-    -- dependencies = { "cmp-nvim-lsp", "lsp_signature.nvim", },
-    -- event = { "BufReadPre", "BufNewFile" },
-    -- event = "BufRead",
+    dependencies = {
+        --     "cmp-nvim-lsp",
+        "ray-x/lsp_signature.nvim",
+        --     "mason-lspconfig.nvim",
+        "nvimdev/lspsaga.nvim",
+    },
 }
 lsp["williamboman/mason.nvim"] = {
     lazy = true,
@@ -24,12 +24,18 @@ lsp["williamboman/mason.nvim"] = {
 lsp["williamboman/mason-lspconfig.nvim"] = {
     lazy = true,
     config = require("configs.mason").lspconfig,
-    dependencies = { "mason.nvim" },
-    -- ft = { "cpp", "lua", "python", "c" },
+    dependencies = { "williamboman/mason.nvim" },
+    ft = { "cpp", "lua", "python", "c" },
 }
-lsp["tami5/lspsaga.nvim"] = {
+lsp["nvimdev/lspsaga.nvim"] = {
     lazy = true,
-    config = require("configs.lspsaga"),
+    config = function()
+        require("lspsaga").setup({})
+    end,
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+        "nvim-treesitter/nvim-treesitter",
+    },
 }
 lsp["rafamadriz/friendly-snippets"] = {
     lazy = true,
@@ -50,7 +56,7 @@ lsp["hrsh7th/nvim-cmp"] = {
         { "hrsh7th/cmp-cmdline" },
         { "friendly-snippets" },
         { "lspkind-nvim" },
-        {"windwp/nvim-autopairs"}
+        { "windwp/nvim-autopairs" },
         -- { "octaltree/cmp-look", after = "nvim-cmp" },
         --
     },

@@ -10,21 +10,30 @@ ui["RRethy/vim-illuminate"] = {
     lazy = true,
     config = require("configs.others").illuminate
 }
-ui["goolord/alpha-nvim"] = {
+-- ui["goolord/alpha-nvim"] = {
+--     lazy = true,
+--     requires = {"nvim-tree/nvim-web-devicons"  },
+--     event = "BufWinEnter",
+--     config = require("configs.others").alpha,
+-- }
+ui["glepnir/dashboard-nvim"] = {
     lazy = true,
-    requires = {"nvim-tree/nvim-web-devicons"  },
-    event = "BufWinEnter",
-    config = require("configs.others").alpha,
+    event = 'VimEnter',
+    config = function ()
+       require('dashboard').setup{
+           theme = 'hyper'
+       } 
+    end,
+    dependencies = {"nvim-tree/nvim-web-devicons"  },
 }
 ui["navarasu/onedark.nvim"] = {
     lazy = true,
 }
--- ui["kyazdani42/nvim-web-devicons"] = {}
 ui["nvim-tree/nvim-web-devicons"] = {}
 ui["nvim-lualine/lualine.nvim"] = {
     lazy = true,
     config = require("configs.lualine"),
-    dependencies = { "lsp_signature.nvim" },
+    dependencies = { "ray-x/lsp_signature.nvim" },
     event = { "BufRead" },
 }
 ui["romgrk/barbar.nvim"] = {

@@ -32,14 +32,14 @@ return function()
             timeout = 500,
         },
         filters = {
-            -- custom = {
-            --     ".git",
-            --     "node_modules",
-            --     ".cache",
-            --     "__pycache__",
-            --     ".vscode",
-            --     ".ipynb_checkpoints",
-            -- },
+            custom = {
+                ".git",
+                "node_modules",
+                ".cache",
+                "__pycache__",
+                ".vscode",
+                ".ipynb_checkpoints",
+            },
         },
         renderer = {
             indent_markers = {
@@ -91,10 +91,10 @@ return function()
         view = {
             width = 30,
             side = "left",
-            mappings = {
-                custom_only = false,
-                list = {},
-            },
+            -- mappings = {
+            --     custom_only = false,
+            --     list = {},
+            -- },
             number = false,
             relativenumber = false,
             signcolumn = "yes",

@@ -1,7 +1,7 @@
 local lang = {}
-lang["nathom/filetype.nvim"] = {
-    config = require("configs.others").filetype,
-}
+-- lang["nathom/filetype.nvim"] = {
+--     config = require("configs.others").filetype,
+-- }
 lang["onsails/lspkind-nvim"] = {
     lazy = true,
 }

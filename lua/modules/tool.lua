@@ -28,7 +28,6 @@ tool["sindrets/winshift.nvim"] = {
 tool["nvim-telescope/telescope-fzf-native.nvim"] = {
     lazy = true,
     build = "make",
-    -- after = "telescope.nvim",
 }
 tool["nvim-lua/plenary.nvim"] = {
     lazy = true,
@@ -40,7 +39,7 @@ tool["nvim-telescope/telescope.nvim"] = {
     lazy = true,
     config = require("configs.telescope"),
     cmd = "Telescope",
-    dependencies = { "plenary.nvim", "telescope-fzf-native.nvim", "popup.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim", "nvim-lua/popup.nvim" },
 }
 tool["nvim-treesitter/nvim-treesitter"] = {
     lazy = true,

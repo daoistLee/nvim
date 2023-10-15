@@ -136,12 +136,6 @@ others.virtualtext = function()
         -- e.g. 80 to position at column 80, see `:h nvim_buf_set_extmark()`
     })
 end
-others.filetype = function()
-    vim.g.did_load_filetypes = 1
-    require("filetype").setup({
-        overrides = {},
-    })
-end
 others.lastplace = function()
     require("nvim-lastplace").setup({
         lastplace_ignore_buftype = { "quickfix", "nofile", "help" },

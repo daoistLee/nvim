@@ -44,12 +44,12 @@ edit["edluffy/specs.nvim"] = {
     event = "CursorMoved",
     config = require("configs.others").specs,
 }
-edit["simrat39/symbols-outline.nvim"] = {
-    lazy = true,
-    cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
-    config = require("configs.others").symbols,
-    -- after = "nvim-lspconfig",
-}
+-- edit["simrat39/symbols-outline.nvim"] = {
+--     lazy = true,
+--     cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
+--     config = require("configs.others").symbols,
+--     -- after = "nvim-lspconfig",
+-- }
 edit["abecodes/tabout.nvim"] = {
     lazy = true,
     -- dependencies = { "nvim-treesitter", "nvim-treesitter-context" },
