@@ -28,7 +28,7 @@ return function()
             format = lspkind.cmp_format({
                 mode = "symbol_text",
                 maxwidth = 30,
-                symbol_map = symbol_map,
+                -- symbol_map = symbol_map,
                 before = function(entry, vim_item)
                     local word = entry:get_insert_text()
                     if entry.completion_item.insertTextFormat == require("cmp.types").lsp.InsertTextFormat.Snippet then

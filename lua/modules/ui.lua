@@ -8,7 +8,7 @@ ui["karb94/neoscroll.nvim"] = {
 }
 ui["RRethy/vim-illuminate"] = {
     lazy = true,
-    config = require("configs.others").illuminate
+    config = require("configs.others").illuminate,
 }
 -- ui["goolord/alpha-nvim"] = {
 --     lazy = true,
@@ -18,13 +18,18 @@ ui["RRethy/vim-illuminate"] = {
 -- }
 ui["glepnir/dashboard-nvim"] = {
     lazy = true,
-    event = 'VimEnter',
-    config = function ()
-       require('dashboard').setup{
-           theme = 'hyper'
-       } 
+    event = "VimEnter",
+    config = function()
+        require("dashboard").setup({
+            theme = "hyper",
+            config = {
+                week_header = {
+                    enable = true,
+                }
+            }
+        })
     end,
-    dependencies = {"nvim-tree/nvim-web-devicons"  },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
 }
 ui["navarasu/onedark.nvim"] = {
     lazy = true,
